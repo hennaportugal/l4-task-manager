@@ -1,0 +1,76 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+mat-card mat-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #5a5a5a;
+  min-height: 80px;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.task-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #b7b4b4;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #747272;
+}
+
+.task-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.task-actions i {
+  cursor: pointer;
+  font-size: 20px;
+  color: #e6e0e0;
+  transition: color 0.3s ease;
+}
+
+.task-actions i:hover {
+  color: #1976d2;
+}

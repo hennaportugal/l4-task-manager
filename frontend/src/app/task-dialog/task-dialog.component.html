@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Edit Task</h1>
+
+<div mat-dialog-content>
+    <div>
+        <mat-form-field>
+            <mat-label>Task Title</mat-label>
+            <input type="text" matInput [(ngModel)]="data.task.title" placeholder="Task Title"/>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field>
+            <mat-label>Task Description</mat-label>
+            <input type="text" matInput [(ngModel)]="data.task.description" placeholder="Task Description"/>
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="close()">Cancel</button>
+        <button mat-raised-button [disabled]="data.task.title === '' || data.task.description === ''" color="primary" (click)="save()">Save</button>
+</div>

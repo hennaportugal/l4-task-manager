@@ -1,0 +1,57 @@
+<mat-card>
+  <form [formGroup]="taskForm" (ngSubmit)="createTask()" class="task-form">
+    <mat-form-field>
+      <mat-label>Task Title</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Task Title"
+        formControlName="title"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Task Description</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Task Description"
+        formControlName="description"
+        required
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!taskForm.valid"
+    >
+      Add Task
+    </button>
+  </form>
+</mat-card>
+
+<mat-card>
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search Tasks</mat-label>
+    <input
+      matInput
+      [formControl]="searchControl"
+      placeholder="Search by title"
+    />
+  </mat-form-field>
+  <mat-list>
+    <mat-list-item *ngFor="let task of filteredTasks" class="task-item">
+      <div class="task-content">
+        <div class="task-title">{{ task.title }}</div>
+        <div class="task-description">{{ task.description }}</div>
+      </div>
+      <div class="task-actions">
+        <i class="fas fa-edit" (click)="editTask(task)" title="Edit"></i>
+        <i class="fas fa-trash" (click)="deleteTask(task)" title="Delete"></i>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
